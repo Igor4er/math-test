@@ -11,15 +11,21 @@ def provide_page(request):
     return render(request, "math_test/index.html")
 
 def get_quiz_test(request):
-    eq = generate_eq()
-    wa = genwa(eq['ans1'], eq['ans2'])
-    j = {
-        "a": eq['a'],
-        "b": eq['b'],
-        "c": eq['c'],
-        "correct1": eq['ans1'],
-        "correct2": eq['ans2'],
-        "wrong_answers": wa
+    jj = []
+    jd = {
+        "data": jj
     }
-    return JsonResponse(j)
+    for i in range(10):
+        eq = generate_eq()
+        wa = genwa(eq['ans1'], eq['ans2'])
+        j = {
+            "a": eq['a'],
+            "b": eq['b'],
+            "c": eq['c'],
+            "correct1": eq['ans1'],
+            "correct2": eq['ans2'],
+            "wrong_answers": wa
+        }
+        jj.append(j)
+    return JsonResponse(jd)
     
