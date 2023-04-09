@@ -26,12 +26,12 @@ class SquareEq():
     def rsp(self):
         return random.choice([0.5, 0.75, 0.25, 0.05, 0.15])
     
-    def gena(self):
-        self.a = self.sgs()
+    def gena(self, gf=self.sgs):
+        self.a = gf()
     
-    def genans(self):
-        self.ans1 = self.gs()
-        self.ans2 = self.gs()
+    def genans(self, gf=self.gs):
+        self.ans1 = gf()
+        self.ans2 = gf()
     
     def viet(self):
         self.b = 0 - (self.ans1 + self.ans2)
@@ -91,6 +91,7 @@ def dl_3():
     eq.viet()
     eq.integer_D()
     return eq.retdict(type=3)
+
 
 
 if __name__ == "__main__":
