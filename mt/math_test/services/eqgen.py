@@ -20,4 +20,4 @@ def dl_1():
 
 if __name__ == "__main__":
     eq = dl_1()
-    print(f"{eq['a'] if eq['a'] != 1 else ''}x^2 {'+' if eq['b'] > 0 else '-'} {eq['b']} {'+' if eq['c'] > 0 else '-'} {eq['c']}")
+    print(f"{eq['a'] if eq['a'] != 1 else ''}x^2 {'+' if eq['b'] > 0 else '-'} {abs(eq['b'])} {'+' if eq['c'] > 0 else '-'} {abs(eq['c'])}")
