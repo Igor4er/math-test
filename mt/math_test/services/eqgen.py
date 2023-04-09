@@ -1,5 +1,6 @@
 import random
 from math import sqrt
+from decimal import Decimal
 
 
 class SquareEq():
@@ -20,13 +21,13 @@ class SquareEq():
         return random.choice(list(range(-5, -1)) + list(range(1, 5)))
     
     def pgs(self):
-        return float(self.gs() + self.rsp())
+        return Decimal(self.gs()) + self.rsp()
     
     def psgs(self):
-        return float(self.sgs() + self.rsp())
+        return Decimal(self.sgs()) + self.rsp()
     
     def rsp(self):
-        return random.choice([0.5, 0.75, 0.25, 0.05, 0.15])
+        return random.choice([Decimal(0.50), Decimal(0.75), Decimal(0.25), Decimal(0.5)])
     
     def gena(self):
         self.a = self.sgf()
