@@ -10,6 +10,8 @@ class SquareEq():
         self.b = None
         self.c = None
         self.D = None
+        self.gf = self.gs()
+        self.sgf = self.sgs()
 
     def gs(self):
         return random.choice(list(range(-7, -1)) + list(range(1, 7)))
@@ -26,14 +28,10 @@ class SquareEq():
     def rsp(self):
         return random.choice([0.5, 0.75, 0.25, 0.05, 0.15])
     
-    def gena(self, gf=None):
-        if gf is None:
-            gf = self.sgs
-        self.a = gf()
+    def gena(self):
+        self.a = self.sgf()
     
-    def genans(self, gf=None):
-        if gf is None:
-            gf = self.gs
+    def genans(self):
         self.ans1 = gf()
         self.ans2 = gf()
     
@@ -45,6 +43,8 @@ class SquareEq():
         self.D = self.b**2 - 4*self.a*self.c
         if self.D < 0:
             self.genans()
+            self.viet()
+            self.gena()
             return self.calculate_D
         return True
     
@@ -89,16 +89,24 @@ def dl_2():
 
 
 def dl_3():
-    eq = SquareEq()
-    eq.genans()
-    eq.gena()
-    eq.viet()
-    eq.integer_D()
-    return eq.retdict(type=3)
+    se = SquareEq()
+    se.genans()
+    se.gena()
+    se.viet()
+    se.integer_D()
+    return se.retdict(type=3)
 
 
+def dl_5():
+    se = SquareEq()
+    se.genans(gf=se.pgs)
+    se.gena(gf=se.psgs)
+    se.viet()
+    se.integer_D()
+    return se.retdict(5)
+    
 
 if __name__ == "__main__":
-    eq = dl_2()
-    print(f"{eq['a'] if eq['a'] != 1 else ''}x^2 {'+' if eq['b'] > 0 else '-'} {abs(eq['b']) if eq['b'] != 0 else ''}x {'+' if eq['c'] > 0 else '-'} {abs(eq['c'])} =0")
-    print(f"ans1: {eq['ans1']}\nans2: {eq['ans2']}")
+    se = dl_5()
+    print(f"{se['a'] if se['a'] != 1 else ''}x^2 {'+' if se['b'] > 0 else '-'} {abs(se['b']) if se['b'] != 0 else ''}x {'+' if se['c'] > 0 else '-'} {abs(se['c'])} =0")
+    print(f"ans1: {se['ans1']}\nans2: {se['ans2']}")
