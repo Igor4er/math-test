@@ -19,7 +19,7 @@ MT is a collaborative project created to provide access to learning maths throug
 ## Roadmap:
 - [x] Project structure
 - [x] Equation generator + Difficulty levels (partial)
-- [ ] Wrong answer generator
+- [x] Wrong answer generator
 - [ ] API for last 2 steps
 - [ ] UI UX
 
