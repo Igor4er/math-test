@@ -17,6 +17,15 @@ class SquareEq():
     def sgs(self):
         return random.choice(list(range(-5, -1)) + list(range(1, 5)))
     
+    def pgs(self):
+        return float(self.gs() + self.rsp())
+    
+    def psgs(self):
+        return float(self.sgs() + self.rsp())
+    
+    def rsp(self):
+        return random.choice([0.5, 0.75, 0.25, 0.05, 0.15])
+    
     def gena(self):
         self.a = self.sgs()
     
