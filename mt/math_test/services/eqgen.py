@@ -26,10 +26,14 @@ class SquareEq():
     def rsp(self):
         return random.choice([0.5, 0.75, 0.25, 0.05, 0.15])
     
-    def gena(self, gf=self.sgs):
+    def gena(self, gf=None):
+        if gf is None:
+            gf = self.sgs
         self.a = gf()
     
-    def genans(self, gf=self.gs):
+    def genans(self, gf=None):
+        if gf is None:
+            gf = self.gs
         self.ans1 = gf()
         self.ans2 = gf()
     
