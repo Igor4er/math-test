@@ -11,10 +11,10 @@ class SquareEq():
         self.c = None
         self.D = None
 
-    def gs():
+    def gs(self):
         return random.choice(list(range(-7, -1)) + list(range(1, 7)))
 
-    def sgs():
+    def sgs(self):
         return random.choice(list(range(-5, -1)) + list(range(1, 5)))
     
     def gena(self):
@@ -49,33 +49,30 @@ class SquareEq():
             "c": self.c,
             "ans1": self.ans1,
             "ans2": self.ans2,
-            "exists": self.exists
         }
 
 
 def dl_1():
     se = SquareEq()
 
+    se.genans()
+    se.viet()
+
+    return se.retdict(1)
+
 
 def dl_2():
-    ans1 = gs()
-    ans2 = gs()
+    se = SquareEq()
 
-    b = 0 - (ans1 + ans2)
-    c = ans1 * ans2
+    se.genans()
+    se.viet()
 
-    a = sgs()
-    b = b * a
-    c = c * a
+    se.gena()
 
-    return {
-        "type": 1,
-        "a": a,
-        "b": b,
-        "c": c,
-        "ans1": ans1,
-        "ans2": ans2
-    }
+    se.b = se.b * se.a
+    se.c = se.c * se.a
+
+    return se.retdict(2)
 
 
 def dl_3():
