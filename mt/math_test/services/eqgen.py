@@ -85,27 +85,12 @@ def dl_2():
 
 
 def dl_3():
-    v1 = gs()
-    v2 = gs()
-    a = gs()
-
-    b = -(v1+v2)
-    c = v1*v2
-
-    D = b**2 - 4*a*c
-
-    if D >= 0:
-        if not sqrt(D).is_integer():
-            return dl_3()
-        else:
-            return {
-                "type": 3,
-                "a": a,
-                "b": b,
-                "c": c
-            }
-    else:
-        return dl_3()
+    eq = SquareEq()
+    eq.genans()
+    eq.gena()
+    eq.viet()
+    eq.integer_D()
+    return eq.retdict(type=3)
 
 
 if __name__ == "__main__":
