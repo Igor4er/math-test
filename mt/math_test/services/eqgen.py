@@ -94,7 +94,17 @@ def dl_3():
     se.gena()
     se.viet()
     se.integer_D()
-    return se.retdict(type=3)
+    return se.retdict(3)
+
+
+def dl_4():
+    se = SquareEq()
+
+    se.gf = se.pgs
+    se.genans()
+    se.viet()
+
+    return se.retdict(4)
 
 
 def dl_5():
@@ -111,6 +121,6 @@ def dl_5():
     
 
 if __name__ == "__main__":
-    se = dl_5()
+    se = dl_4()
     print(f"{se['a'] if se['a'] != 1 else ''}x^2 {'+' if se['b'] > 0 else '-'} {abs(se['b']) if se['b'] != 0 else ''}x {'+' if se['c'] > 0 else '-'} {abs(se['c'])} =0")
     print(f"ans1: {se['ans1']}\nans2: {se['ans2']}")
