@@ -2,28 +2,59 @@ import random
 from math import sqrt
 
 
-def gs():
-    return random.choice(list(range(-7, -1)) + list(range(1, 7)))
+class SquareEq():
+    def __init__(self) -> None:
+        self.ans1 = None
+        self.ans2 = None
+        self.a = 1
+        self.b = None
+        self.c = None
+        self.D = None
 
+    def gs():
+        return random.choice(list(range(-7, -1)) + list(range(1, 7)))
 
-def sgs():
-    return random.choice(list(range(-5, -1)) + list(range(1, 5)))
+    def sgs():
+        return random.choice(list(range(-5, -1)) + list(range(1, 5)))
+    
+    def gena(self):
+        self.a = self.sgs()
+    
+    def genans(self):
+        self.ans1 = self.gs()
+        self.ans2 = self.gs()
+    
+    def viet(self):
+        self.b = 0 - (self.ans1 + self.ans2)
+        self.c = self.ans1 * self.ans2
+    
+    def calculate_D(self):
+        self.D = self.b**2 - 4*self.a*self.c
+        if self.D < 0:
+            self.genans()
+            return self.calculate_D
+        return True
+    
+    def integer_D(self):
+        if self.calculate_D():
+            if not sqrt(self.D).is_integer():
+                self.genans()
+                return self.integer_D
+    
+    def retdict(self, type: int):
+        return {
+            "type": type,
+            "a": self.a,
+            "b": self.b,
+            "c": self.c,
+            "ans1": self.ans1,
+            "ans2": self.ans2,
+            "exists": self.exists
+        }
+
 
 def dl_1():
-    ans1 = gs()
-    ans2 = gs()
-
-    b = 0 - (ans1 + ans2)
-    c = ans1 * ans2
-
-    return {
-        "type": 1,
-        "a": 1,
-        "b": b,
-        "c": c,
-        "ans1": ans1,
-        "ans2": ans2
-    }
+    se = SquareEq()
 
 
 def dl_2():
