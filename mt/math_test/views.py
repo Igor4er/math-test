@@ -4,6 +4,7 @@ from math_test.services.wronggen import genwa
 from django.http import JsonResponse
 import json
 
+
 # Create your views here.
 
 def provide_page(request):
