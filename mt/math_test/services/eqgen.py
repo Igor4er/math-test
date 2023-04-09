@@ -32,8 +32,8 @@ class SquareEq():
         self.a = self.sgf()
     
     def genans(self):
-        self.ans1 = gf()
-        self.ans2 = gf()
+        self.ans1 = self.gf()
+        self.ans2 = self.gf()
     
     def viet(self):
         self.b = 0 - (self.ans1 + self.ans2)
@@ -99,8 +99,12 @@ def dl_3():
 
 def dl_5():
     se = SquareEq()
-    se.genans(gf=se.pgs)
-    se.gena(gf=se.psgs)
+
+    se.gf = se.pgs
+    se.genans()
+
+    se.sgf = se.psgs
+    se.gena()
     se.viet()
     se.integer_D()
     return se.retdict(5)
