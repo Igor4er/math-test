@@ -1,4 +1,5 @@
 import random
+from decimal import Decimal
 
 
 def genwa(ans1, ans2):
@@ -52,9 +53,9 @@ def wr_4(ans1, ans2):
     v = [True, False]
     cv = random.choice(v)
     if cv:
-        return ans1, b/ans1
+        return ans1, Decimal(b)/Decimal(ans1)
     else:
-        return ans2, b/ans2
+        return ans2, Decimal(b)/Decimal(ans2)
 
 
 if __name__ == "__main__":

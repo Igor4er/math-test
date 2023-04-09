@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'math_test'
+    'math_test.apps.MathTestConfig'
 ]
 
 MIDDLEWARE = [
