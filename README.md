@@ -10,6 +10,12 @@ MT is a collaborative project created to provide access to learning maths throug
 5. Дискримінанти (малі, дробні)
 6. Дискримінант ірраціональний (корінь)
 
+## Wrong answers:
+1. Inverse number
+2. Inverse both
+3. IncDec opposite both
+4. b/ansx = ansy
+
 ## Roadmap:
 - [x] Project structure
 - [x] Equation generator + Difficulty levels (partial)
