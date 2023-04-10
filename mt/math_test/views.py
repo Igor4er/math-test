@@ -25,7 +25,7 @@ def get_quiz_test(request):
             "correct1": eq['ans1'],
             "correct2": eq['ans2'],
             "wrong_answers": wa,
-            "eq_str": f"{eq['a'] if eq['a'] != 1 else ''}x^2 {'+' if eq['b'] > 0 else '-'} {abs(eq['b']) if eq['b'] != 0 else ''}x {'+' if eq['c'] > 0 else '-'} {abs(eq['c'])} =0"
+            "eq_str": f"{eq['a'] if eq['a'] != 1 else ''}x^2 {'+' if eq['b'] > 0 else '-'} {abs(eq['b']) if eq['b'] != 1 else ''}x {'+' if eq['c'] > 0 else '-'} {abs(eq['c'])} =0"
         }
         jj.append(j)
     return JsonResponse(jd)
